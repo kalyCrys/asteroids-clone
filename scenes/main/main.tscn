@@ -1,8 +1,9 @@
 [gd_scene format=3 uid="uid://cuprbq600w8r8"]
 
 [ext_resource type="Texture2D" uid="uid://cymnql4of0twx" path="res://assets/sprites/background.png" id="1_hyk8p"]
-[ext_resource type="PackedScene" uid="uid://cv3rce54ut6xj" path="res://scenes/asteroids/big_asteroid.tscn" id="2_iuonh"]
 [ext_resource type="PackedScene" uid="uid://u57j8cw0hyvx" path="res://scenes/player/player.tscn" id="3_k2fmo"]
+[ext_resource type="Script" uid="uid://ou6r4eam6pyj" path="res://scenes/main/asteroid_spawner.gd" id="3_l3cfh"]
+[ext_resource type="PackedScene" uid="uid://cv3rce54ut6xj" path="res://scenes/asteroids/big_asteroid.tscn" id="4_l3cfh"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_kp2t7"]
 size = Vector2(1157.5, 20)
@@ -16,10 +17,6 @@ size = Vector2(20, 691)
 position = Vector2(575.75, 323.75003)
 scale = Vector2(0.58337545, 0.52910274)
 texture = ExtResource("1_hyk8p")
-
-[node name="BigAsteroid" parent="." unique_id=1667692213 instance=ExtResource("2_iuonh")]
-position = Vector2(1377, 309)
-speed = -300.0
 
 [node name="Player" parent="." unique_id=548808425 instance=ExtResource("3_k2fmo")]
 position = Vector2(94, 323)
@@ -53,3 +50,8 @@ metadata/_edit_group_ = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Walls/RightWall" unique_id=127679549]
 shape = SubResource("RectangleShape2D_1cimm")
+
+[node name="AsteroidSpawner" type="Marker2D" parent="." unique_id=1864014618]
+position = Vector2(1168, 304)
+script = ExtResource("3_l3cfh")
+big_asteroid_scene = ExtResource("4_l3cfh")

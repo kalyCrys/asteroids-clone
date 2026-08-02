@@ -4,9 +4,7 @@ extends CharacterBody2D
 
 func _physics_process(delta):
 	var y_input = Input.get_axis("up", "down")
+	var x_input = Input.get_axis("left", "right")
 	velocity.y = y_input * speed
-	move_and_slide()
-	
-	var x_input = Input.get_axis("left","right")
-	velocity.x = x_input * speed
+	velocity = Vector2(x_input,y_input) * speed
 	move_and_slide()

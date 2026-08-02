@@ -9,7 +9,7 @@ height = 130.7621
 
 [node name="medium_asteroid" type="Area2D" unique_id=1396083869]
 script = ExtResource("1_nnmk3")
-speed = 300.0
+speed = -300.0
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=1341419262]
 texture = ExtResource("1_5f0el")
